@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 //middleware for routes
 app.use("/api/expenses", expensesRouter);
 
-// app.listen(PORT, function (){
-//     console.log(`Server is running on port ${PORT}`)
-// });
+const PORT = process.env.PORT || 3000
+app.listen(PORT, function (){
+    console.log(`Server is running on port ${PORT}`)
+});
