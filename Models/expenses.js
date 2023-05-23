@@ -9,7 +9,7 @@ export async function getAllExpenses() {
 export async function createExpense(expenses) {
   const { user_id, category, expense, price, date } = expenses;
   const result = await query(
-    `INSERT INTO expenses (expense, price, date) VALUES ($1, $2, $3, $4, $5) RETURNING *`,
+    `INSERT INTO expenses (user_id, category, expense, price, date) VALUES ($1, $2, $3, $4, $5) RETURNING *`,
     [user_id, category, expense, price, date]
   );
   return result.rows;
